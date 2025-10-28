@@ -1,9 +1,9 @@
 ### Guess The Number Game
-Simple number guesser written in python and my first project.
+My first simple projects.
 
 ### Launching:
 ```python -m venv venv```
 
 ```source .venv/bin/activate```
 
-```python script.py```
+```python3 <filename.py>```

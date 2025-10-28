@@ -20,11 +20,13 @@ def inputing():
         return int(num)
 
 attempt = 0
+counter = 0
 while attempt != number:
+    counter += 1
     attempt = inputing()
     if attempt < number:
         print('Wished number is bigger than yours')
     elif attempt > number:
         print('Wished number is smaller than yours')
     else:
-        print("You've guessed the number, congratulations!")
+        print(f"You've guessed the number, congratulations! You did it in {counter} attempts")

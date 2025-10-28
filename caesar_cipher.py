@@ -16,7 +16,7 @@ def alphabet():
 def value(lang):
     while True:
         val = input(f'Enter the text (letters only in {lang}): ')
-        if all(ch in ALL_CHARS or ch == ' ' for ch in val):
+        if all(ch in ALL_CHARS or not ch in ALL_CHARS for ch in val):
             return val
         print("Invalid input, try again.")
 
@@ -37,12 +37,34 @@ def encrypt():
     text, shift, alphabet_low, alphabet_up = parameters()
     result = ''
     for e in text:
-        if e == ' ':
-            result += ' '
-        elif e.isupper():
+        if e.isupper():
             result += alphabet_up[(alphabet_up.index(e) + shift) % len(alphabet_up)]
-        else:
+        elif e.islower():
             result += alphabet_low[(alphabet_low.index(e) + shift) % len(alphabet_low)]
+        else:
+            result += e
     return result
 
-print(encrypt())
+def decrypt():
+    text, shift, alphabet_low, alphabet_up = parameters()
+    result = ''
+    for e in text:
+        if e.isupper():
+            result += alphabet_up[(alphabet_up.index(e) - shift) % len(alphabet_up)]
+        elif e.islower():
+            result += alphabet_low[(alphabet_low.index(e) - shift) % len(alphabet_low)]
+        else:
+            result += e
+    return result
+
+def main():
+    choice = ''
+    while choice != 'e' and choice != 'd':
+        choice = input('Encrypt (e) or decrypt (d): ')
+    if choice == 'e':
+        print(encrypt(), '\n')
+    else:
+        print(decrypt(), '\n')
+
+while True:
+    main()

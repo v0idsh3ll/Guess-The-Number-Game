@@ -1,6 +1,7 @@
-import random #import the random library
+import random
 
-def is_valid(number): #is the number valid?
+def is_valid(number):
+     """function that is checking if the number is valid"""
      if str(number).isdigit():
          if int(number) >= 1 and int(number) <= 100:
              return int(number)
@@ -10,6 +11,7 @@ def is_valid(number): #is the number valid?
         return False
 
 def inputing():
+    """function to get the number"""
     num = input("Type here your number: ")
     while not is_valid(num):
         print("You should type a number is bigger than 1 and smaller than 100")
@@ -18,7 +20,8 @@ def inputing():
         return int(num)
 
 def game():
-    number = random.randint(1, 100)  # generating random number
+    """main function"""
+    number = random.randint(1, 100)
     attempt = 0
     counter = 0
     while attempt != number:

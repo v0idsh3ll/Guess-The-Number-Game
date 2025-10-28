@@ -12,6 +12,8 @@ def asking():
     answer = random.choice(answers)
     if answer:
         return answer, question
+    else:
+        return None
 
 def main():
     total = 0

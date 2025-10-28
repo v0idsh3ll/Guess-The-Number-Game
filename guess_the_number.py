@@ -3,7 +3,7 @@ import random
 def is_valid(number):
      """function that is checking if the number is valid"""
      if str(number).isdigit():
-         if int(number) >= 1 and int(number) <= 100:
+         if 1 <= int(number) <= 100:
              return int(number)
          else:
              return False

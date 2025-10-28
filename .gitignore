@@ -1,3 +1,5 @@
 .idea
 venv
+.venv
+PyCharmMiscProject.iml
 project.iml

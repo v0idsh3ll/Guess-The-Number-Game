@@ -34,5 +34,6 @@ def game():
         else:
             print(f"You've guessed the number, congratulations! You did it in {counter} attempts", "\n", "\n", "\n" 'New number have been generated, try to guess it!')
 
+print("Hi! It's game where you can try to guess randomly generated number from 1 to 100")
 while True:
     game()

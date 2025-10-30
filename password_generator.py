@@ -1,4 +1,4 @@
-import random
+import secrets
 
 CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&*()_+`-=№;%:?"
 
@@ -25,7 +25,7 @@ def generate_password(length):
     """generate a password"""
     result = []
     for _ in range(length):
-        result.append(random.choice(CHARS))
+        result.append(secrets.choice(CHARS))
     return "".join(result)
 
 print("Hello! It's password generator program. Press <ENTER> for quit")

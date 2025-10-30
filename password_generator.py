@@ -1,11 +1,14 @@
 import secrets
+import sys
 
 CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&*()_+`-=№;%:?"
 
 def is_valid(value):
     """function that is checking if the values is valid"""
-    if value.isdigit() or value == '':
+    if value.isdigit():
         return value
+    elif value == '':
+        sys.exit()
     else:
         return False
 
@@ -13,7 +16,7 @@ def params():
     """getting parameters"""
     quantity = False
     length = False
-    while not quantity or not length:
+    while not quantity and not length:
         quantity = is_valid(input('Enter passwords quantity to generate: '))
         length = is_valid(input('Enter every password length to generate: '))
     if quantity and length:
